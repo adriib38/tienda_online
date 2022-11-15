@@ -1,16 +1,99 @@
 
+body {
+    margin: 0;
+    background-image: url('productos/rick_and_morty.jpg');
+}
+
+#cabecera {
+    background-color: green;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cabecera > img {
+    float: left;
+}
+
+.navbar > i {
+    font-size: 2rem;
+}
+
+.navbar a {
+    color: white;
+}
+
+.fa-cart-shopping {
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    color: white;
+    border-radius: 100%;
+    padding: 10px;
+ 
+}
+
 .productos {
     display: flex;
-
-    background-color: blue;
+    background-color: rgba(255, 255, 255, 0.411);
     padding: 10px;
     flex-wrap: wrap;
 }
 
 .productos > div {
-    width: 50%;
+    width: 320px;
     height: 20%;
     background-color: red;
     margin: 5px;
     overflow-y: auto;
+}
+
+.productos > div img {
+    justify-content: center;
+}
+
+.product-buttons {
+    background-color: blueviolet;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.product-buttons i {
+    margin-right: 10%;
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+    font-style: normal;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    height: 50px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    color: white;
+
+}
+  
+li {
+    float: left;
+    height: 70px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
 }
