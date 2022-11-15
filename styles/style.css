@@ -1,0 +1,145 @@
+
+body {
+    margin: 0;
+   
+    background-color: rgb(255, 200, 99);
+    background-image: url('rick_and_morty.jpg');
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: rnm;
+    src: url(get_schwifty.ttf);
+}
+
+#cabecera {
+    background-color: green;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cabecera > img {
+    float: left;
+}
+
+h1 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(16, 243, 255);
+}
+
+h2 {
+    background-color: rgb(16, 243, 255);
+    padding: 10px;
+}
+
+.content {
+    margin-left: 15px;
+    margin-right: 15px;
+
+}
+
+.navbar > i {
+    font-size: 2rem;
+}
+
+.navbar a {
+    color: white;
+}
+
+.fa-cart-shopping {
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    color: white;
+    border-radius: 100%;
+    padding: 10px;
+ 
+}
+
+.productos {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.411);
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.productos > div {
+    width: 320px;
+    height: 20%;
+    background-color: rgb(182, 231, 255);
+    margin: 5px;
+    overflow-y: auto;
+    padding: 10px;
+    border: red solid 3px;
+}
+
+.productos > div:hover {
+    transform: scale(1.05);
+    transition: .5s all;
+}
+
+.productos > div img {
+    justify-content: center;
+}
+
+.product-buttons {
+    background-color: blueviolet;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.product-buttons i {
+    margin-right: 10%;
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+    font-style: normal;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    height: 50px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    color: white;
+
+}
+  
+li {
+    float: left;
+    height: 70px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+table.carrito {
+    border-collapse: collapse;
+    background-color: greenyellow;
+}
+
+table.carrito tr:nth-child(1){
+    background-color: rgb(8, 173, 93);
+}
+
+table.carrito td {
+    border: solid 3px;
+    padding: 10px;
+}
