@@ -21,7 +21,7 @@
     <div class="content">
         <?php 
             //Si existe la sesión (hay obketps en el carro)
-            if(isset($_SESSION)){
+            if(isset($_SESSION["carrito"])){
             
                 //Imprime tabla con los productos
                 echo '<table class="carrito">';
@@ -34,7 +34,9 @@
                     
                 $totalPagar = 0;
                 //Recorre los productos del carro
-                foreach($_SESSION as $item => $cantidad){
+                $carrito = $_SESSION['carrito'];
+                print_r($_SESSION);
+                foreach($carrito as $item => $cantidad){
                     
                     $cod = explode("_", $item)[1];
 
