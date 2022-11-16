@@ -2,9 +2,14 @@
 
     session_start();
 
-    include('inc\bd.inc.php');
-    include('inc\regex.inc.php');
-    include('inc\User.inc.php');
+    //Si la sesión de usuario está iniciada redirige a index.
+    if(isset($_SESSION['usuario'])){
+        header('Location: index.php');
+    }
+
+
+    include('inc/bd.inc.php');
+    include('inc/regex.inc.php');
 
     $hayErrores = false;
 

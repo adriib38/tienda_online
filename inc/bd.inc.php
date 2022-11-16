@@ -1,6 +1,6 @@
 <?php
 
-    include('inc\User.inc.php');
+    include('inc/User.inc.php');
 
     $user = 'Lumos';
     $password = 'Nox';
@@ -44,7 +44,6 @@
 	* @deprecated desde login2
 	*/
     function login($email, $pass){
-        echo 'login()';
         global $dsn, $user, $password, $opciones;
         $conexion = new PDO($dsn, $user, $password, $opciones);
 
@@ -59,15 +58,16 @@
             }else {
                 return false;
             }
+        }else{
+            return false;
         }
     }
-
 
     /**
     * Devuelve usuario por id.
     */
     function selectUserByUsuario($usuario){
-        echo 'selectUserByUsuario()';
+
         global $dsn, $user, $password, $opciones;
         $conexion = new PDO($dsn, $user, $password, $opciones);
 
@@ -87,7 +87,6 @@
             $usr = new User($userObtenido['usuario'], $userObtenido['contrasenya'], $userObtenido['email'], $userObtenido['rol']);
             return $usr;
         }catch(Exception $e){
-            print_r($e);
             return false; 
         }
 

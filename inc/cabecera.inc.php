@@ -6,3 +6,4 @@
     <li><a href="index.php">Principal</a></li>
     <li><a href="carrito.php"><i class="fa-solid fa-cart-shopping"><?=count($_SESSION)?? ''?></i></a><li>
 </ul>
+

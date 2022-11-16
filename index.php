@@ -1,9 +1,10 @@
 <?php    
 
-    include('inc\User.inc.php');
+    include('inc/User.inc.php');
 
     //Definimos que la sesión expire en 10 minutos, para que se vacíe el carrito.
-    ini_set('session.cookie_lifetime', 600000);
+    session_cache_expire(10);
+
     session_start();
 
     //Si llegan parametros por GET, alguno de los botones de acciones
@@ -66,16 +67,25 @@
 <body>
 
     <?php 
-          print_r($_SESSION);
 
         if(isset($_SESSION['usuario'])){
-            include('inc/cabecera_cliente.inc.php');
-            include('inc\catalogo.inc.php');
+            if($_SESSION['usuario']->rol == 'cliente'){
+                include('inc/cabecera_cliente.inc.php');
+            }else{
+                include('inc/cabecera_admin.inc.php');
+            }
+          
+            include('inc/catalogo.inc.php');
+
         }else{
+        
             //NO logeados
             include('inc/cabecera.inc.php');
-            echo '<a href="registro.php">Registro</a>';
-            echo '<a href="login.php">Login</a>';
+          
+            echo '<div id="botones">';
+            echo '<a href="registro.php" class="registro">Registro</a>';
+            echo '<a href="login.php" class="login">Login</a>';
+            echo '</div>';
             echo '<br>';
             echo '<a href="ofertas.php"><img src="img/ofertas.png" width="660px"></a>';
         }

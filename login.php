@@ -1,7 +1,12 @@
 <?php
-    include('inc\bd.inc.php');
+    include('inc/bd.inc.php');
 
     session_start();
+
+    //Si la sesión de usuario está iniciada redirige a index.
+    if(isset($_SESSION['usuario'])){
+        header('Location: index.php');
+    }
 
     if(!empty($_POST)){  
 
@@ -12,15 +17,14 @@
             */
             $usr = selectUserByUsuario($usuario);
             $_SESSION['usuario'] = $usr;
-           
             header('Location: index.php');
         } else {
-            $mensajeInicioFallido = '<p class="red">Inicio fallido</p>';
+            $mensajeInicioFallido = 'Inicio fallido';
         }
     }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +37,11 @@
 <body>
     <?php 
         include('inc/cabecera.inc.php');
+
     ?>
+        
+    <p class="red"><?=$mensajeInicioFallido?? ''?></p>
+
     <form action="#" method="post">
         Email: <input type="text" name="mail" id="">
         Password: <input type="password" name="pass" id="">

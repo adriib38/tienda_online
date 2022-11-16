@@ -35,7 +35,6 @@
                 $totalPagar = 0;
                 //Recorre los productos del carro
                 $carrito = $_SESSION['carrito'];
-                print_r($_SESSION);
                 foreach($carrito as $item => $cantidad){
                     
                     $cod = explode("_", $item)[1];
