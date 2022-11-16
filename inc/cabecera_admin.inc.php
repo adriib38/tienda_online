@@ -1,6 +1,6 @@
 <div id="cabecera">  
     <img src="img/banner-img.png" width="220px">
-    <h1>MerchaShop AdriánBenítez</h2>
+    <h1 class="logo">MerchaShop AdriánBenítez</h2>
     <span>admin<span>
 </div>
     <ul class="navbar">

@@ -13,7 +13,7 @@ body {
 }
 
 #cabecera {
-    background-color: green;
+    background: linear-gradient(42deg, #2F8639 10%, #6bb829 100%);
     height: 300px;
     display: flex;
     align-items: center;
@@ -27,6 +27,13 @@ body {
 h1 {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(16, 243, 255);
+}
+
+.logo{
+    color: #14AED0;
+    text-shadow: 3px 3px 4px #C0CB5F;
+    font-size: 60px;
+    text-shadow: 3px 3px 3px blue, 2px 5px 10px #C0CB5F;
 }
 
 h2 {
@@ -50,17 +57,20 @@ h2 {
 
 .fa-cart-shopping {
     background-color: red;
-    width: 10px;
-    height: 10px;
+    width: 100%;
+    height: 100%;
     color: white;
     border-radius: 100%;
-    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
  
 }
 
 .productos {
     display: flex;
-    background-color: rgba(255, 255, 255, 0.411);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
     flex-wrap: wrap;
 }
