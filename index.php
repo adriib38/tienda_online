@@ -1,4 +1,7 @@
 <?php    
+
+    include('inc\User.inc.php');
+
     //Definimos que la sesión expire en 10 minutos, para que se vacíe el carrito.
     ini_set('session.cookie_lifetime', 600000);
     session_start();
@@ -63,6 +66,8 @@
 <body>
 
     <?php 
+          print_r($_SESSION);
+
         if(isset($_SESSION['usuario'])){
             include('inc/cabecera_cliente.inc.php');
             include('inc\catalogo.inc.php');
@@ -74,7 +79,7 @@
             echo '<br>';
             echo '<a href="ofertas.php"><img src="img/ofertas.png" width="660px"></a>';
         }
-       
+
     ?>
    
 

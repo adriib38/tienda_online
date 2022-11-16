@@ -1,5 +1,23 @@
 <?php
+    include('inc\bd.inc.php');
+
     session_start();
+
+    if(!empty($_POST)){  
+
+        $usuario = login($_POST["mail"], $_POST["pass"]);
+        if($usuario){
+            /*
+            * Sesión inciada correctamente
+            */
+            $usr = selectUserByUsuario($usuario);
+            $_SESSION['usuario'] = $usr;
+           
+            header('Location: index.php');
+        } else {
+            $mensajeInicioFallido = '<p class="red">Inicio fallido</p>';
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +35,7 @@
         include('inc/cabecera.inc.php');
     ?>
     <form action="#" method="post">
-        Usuario o email: <input type="text" name="usuario" id="">
+        Email: <input type="text" name="mail" id="">
         Password: <input type="password" name="pass" id="">
         <input type="submit" value="Login">
     </form>
