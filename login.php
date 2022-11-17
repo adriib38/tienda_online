@@ -8,8 +8,8 @@
         header('Location: index.php');
     }
 
+    //Cuando llega algo POST (solicitud inicio de sesión)
     if(!empty($_POST)){  
-
         $usuario = login($_POST["mail"], $_POST["pass"]);
         if($usuario){
             /*
@@ -29,7 +29,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - MerchaShop</title>
 
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/92a45f44ad.js" crossorigin="anonymous"></script>
@@ -42,7 +42,7 @@
         
     <p class="red"><?=$mensajeInicioFallido?? ''?></p>
 
-    <form action="#" method="post">
+    <form action="#" id="login" method="post">
         Email: <input type="text" name="mail" id="">
         Password: <input type="password" name="pass" id="">
         <input type="submit" value="Login">

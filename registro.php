@@ -1,12 +1,11 @@
 <?php
 
-    session_start();
-
     //Si la sesión de usuario está iniciada redirige a index.
     if(isset($_SESSION['usuario'])){
         header('Location: index.php');
     }
-
+    
+    session_start();
 
     include('inc/bd.inc.php');
     include('inc/regex.inc.php');
@@ -72,14 +71,18 @@
         include('inc/cabecera.inc.php');
         
     ?>
-        <h2>Registro</h2>
+        <h2>Registro - MerchaShop</h2>
         <form id="registro" action="#" method="post">
+            <label for="usuario">Usuario</label>
             <input type="text" name="usuario" value="<?=$_POST['usuario']??'' ?>">
             <?=$errorNombre??'' ?>
+            <label for="mail">Mail</label>
             <input type="mail" name="mail" value="<?=$_POST['mail']??'' ?>">
             <?=$errorMail??'' ?>
+            <label for="pass">Password</label>
             <input type="password" name="pass">
             <?=$errorPass??'' ?>
+            <label for="rep-pass">Repeat password</label>
             <input type="password" name="rep-pass">
             <?=$errorRepPass??'' ?>
             <input type="submit" value="Registrarme">

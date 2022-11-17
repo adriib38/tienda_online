@@ -19,9 +19,7 @@ body {
     justify-content: center;
 }
 
-#cabecera > img {
-    float: left;
-}
+#cabecera > img { float: left; }
 
 h1 {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -43,17 +41,11 @@ h2 {
 .content {
     margin-left: 15px;
     margin-right: 15px;
-
 }
 
-.navbar > i {
-    font-size: 2rem;
-}
+.navbar > i { font-size: 2rem; }
 
-.navbar a {
-    color: white;
-}
-
+.navbar a { color: white; }
 
 .registro {
     color: white;
@@ -117,7 +109,10 @@ h2 {
 
 #botones {
     margin-top: 30px;
-    margin-left: 20%;
+    text-align: center;
+}
+#botones img {
+    margin-top: 30px;
 }
 
 .fa-cart-shopping {
@@ -209,13 +204,35 @@ table.carrito,
 table.usuarios {
     border-collapse: collapse;
     background-color: greenyellow;
+    margin-top: 40px;
+    margin-left: 40px;
 }
 
-table.carrito tr:nth-child(1){
+table.carrito tr:nth-child(1),
+table.usuarios tr:nth-child(1){
     background-color: rgb(8, 173, 93);
+    font-weight: bold;
 }
 
+table.usuarios td,
 table.carrito td {
     border: solid 3px;
     padding: 10px;
+}
+
+.red {
+    background-color: rgb(172, 7, 7);
+}
+
+#registro, #login {
+    display: inline-grid;
+    font-size: 1.4em;
+    background-color: #68B62A;
+    padding: 30px;
+    margin-left: 40px;
+}
+
+#registro > input,
+#login > input {
+    font-size: 1.2em;
 }

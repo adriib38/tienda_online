@@ -59,7 +59,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>🛍️ MerchaShop</title>
 
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/92a45f44ad.js" crossorigin="anonymous"></script>
@@ -85,14 +85,11 @@
             echo '<div id="botones">';
             echo '<a href="registro.php" class="registro">Registro</a>';
             echo '<a href="login.php" class="login">Login</a>';
-            echo '</div>';
             echo '<br>';
             echo '<a href="ofertas.php"><img src="img/ofertas.png" width="660px"></a>';
+            echo '</div>';
         }
-
     ?>
    
-
-  
 </body>
 </html>
