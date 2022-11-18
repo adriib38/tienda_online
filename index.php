@@ -1,12 +1,28 @@
 <?php    
-
-    include('inc/User.inc.php');
-
-    //Definimos que la sesión expire en 10 minutos, para que se vacíe el carrito.
-    session_cache_expire(10);
+    include('inc/bd.inc.php');
 
     session_start();
 
+    /**
+     *  AUTOLOGIN
+     * 
+     *  Si el usuario ha iniciado sesión y ha dicho "recordarme"
+     * 
+     *  Si no existe la variable de sesión del usuario y existe la cookie con el token:
+     * se comprobará si en la base de datos existe ese token, en caso de existir
+     * se obtendrán los datos del usuario y se creará la variable de sesión con
+     * ellos. 
+     * 
+     */
+    if(!isset($_SESSION['usuario'])){
+        if(isset($_COOKIE['token'])){
+            if(existenElTokenEnLaBD($_COOKIE['token'])){
+                //Obtener usuario por token e inicia la sesion
+                $_SESSION['usuario'] = selectUserByToken($_COOKIE['token']);
+            }
+        }
+    }
+   
     //Si llegan parametros por GET, alguno de los botones de acciones
     if(!empty($_GET)){
         //Le demos un nombre al producto: "cod_" más su codigo.
@@ -68,15 +84,18 @@
 
     <?php 
 
+        //Si el usuario está iniciado
+        //Dependiendo del rol del usuario iniciado se mostrará una cabacera u otra.
         if(isset($_SESSION['usuario'])){
             if($_SESSION['usuario']->rol == 'cliente'){
                 include('inc/cabecera_cliente.inc.php');
             }else{
                 include('inc/cabecera_admin.inc.php');
             }
-          
+            //Imprime el catalogo de productos
             include('inc/catalogo.inc.php');
 
+        //Si el usuario no está iniciando
         }else{
         
             //NO logeados

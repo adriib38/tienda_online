@@ -17,6 +17,13 @@
             */
             $usr = selectUserByUsuario($usuario);
             $_SESSION['usuario'] = $usr;
+            
+            ini_set('session.gc_maxlifetime', 3600);
+
+            if($_POST['recordar'] = 'on'){
+                insertarTokenLogin($_SESSION['usuario']->usuario);
+            }
+
             header('Location: index.php');
         } else {
             $mensajeInicioFallido = 'Inicio fallido';
@@ -37,7 +44,6 @@
 <body>
     <?php 
         include('inc/cabecera.inc.php');
-
     ?>
         
     <p class="red"><?=$mensajeInicioFallido?? ''?></p>
@@ -45,6 +51,7 @@
     <form action="#" id="login" method="post">
         Email: <input type="text" name="mail" id="">
         Password: <input type="password" name="pass" id="">
+        <label for="sesion_iniciada">Recuerdame </label> <input type="checkbox" name="recordar" id="sesion_iniciada">
         <input type="submit" value="Login">
     </form>
 </body>

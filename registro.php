@@ -45,7 +45,7 @@
 
         if(!$hayErrores){
             $passEncriptada = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-            $newUser = new User($_POST["usuario"], $passEncriptada, $_POST["mail"], 'cliente');
+            $newUser = new User($_POST["usuario"], $passEncriptada, $_POST["mail"], 'cliente', '');
             
             if(insertUser($newUser)){
                 header('Location: login.php');
